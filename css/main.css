@@ -1,3 +1,5 @@
+/****** MOBILE FIRST CSS *****/
+
 html {
 	font-size: 16px;
 }
@@ -48,17 +50,23 @@ p {
 /*The widths are in a percentage!*/
 header {
 	margin: 0 auto;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: column nowrap;
+	flex-flow: column wrap;
 }
 
 header h1 {
 	border-bottom: 3px solid #77a466;
 	margin: 0;
+	width: 100%;
 	padding: 36px 0 16px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
 header h1 span {
 	color: #77a466;
 }
@@ -152,7 +160,7 @@ header nav ul li a{
 /*The widths are in a percentage!*/
 footer {
 	border-top: 3px solid #eee;
-	margin: 0 auto;
+	width: 100%;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -165,4 +173,60 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+@media all and (min-width:768px) {
+	/****** TABLET CSS ******/
+
+.bottom-section {
+	width: 100%;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row nowrap;
+}
+
+.section-one,
+.section-two,
+.section-three {
+	border-top: 1px solid #eee;
+	width: 33%;
+}
+
+.section-two {
+	border-right: 1px solid #eee;
+	border-left: 1px solid #eee;
+	padding: 0 20px;
+}
+
+.section-three {
+	padding-left: 20px;
+}
+
+}
+
+@media all and (min-width:1200px) {
+	/****** DESKTOP CSS ******/
+
+	header {
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	header h1 {
+		border-bottom: none;
+		width: 33.3%;
+		justify-content: left;
+	}
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		flex-flow: row wrap;
+	}
+
+	.main-image {
+		border-top: 3px solid #77a466;
+	}
 }
